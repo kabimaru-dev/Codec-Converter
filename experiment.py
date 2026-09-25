@@ -39,6 +39,12 @@ def calculate(input_file, type="byte"):
             size_bytes = file.stat().st_size
             return size_bytes / 1024 / 1024 / 1024
 
+def calculate_output(output_file, type=i_need_class_please_see_next_commit):
+    print("original:", calculate(os.path.join(os.getcwd(), input_file), "megabyte"), "MB")
+    print("   ", target_total_bitrate, "bitrate*")
+    print("compressed:", calculate(os.path.join(os.getcwd(), output_file), "megabyte"), "MB")
+    print("compressed times:", "x"+str(calculate(os.path.join(os.getcwd(), input_file), "byte")/calculate(os.path.join(os.getcwd(), output_file))))
+
 def libaom_av1__experiment(input_file, output_file, vformat, acodec, audio_bitrate, counter, target_total_bitrate):
     vcodec = "libaom-av1"
     output_file = str(counter) + output_file + vcodec + vformat
