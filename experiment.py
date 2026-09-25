@@ -1,37 +1,10 @@
-import json
 import os
 from pathlib import Path
 from ffmpeg import FFmpeg
 
-class CodecConverter:
-    input_file = input("Write name of the file(should be near with .py file): ")
-    output_file = "_experiment_video_"
-    compressed_times = 64
-    audio_bitrate="16000"
-    counter = 1
-    vformat = ".mkv"
-    acodec = "libopus"
-    target_bytes = Path(input_file).stat().st_size / compressed_times
-
-    ffprobe = (FFmpeg(executable="ffprobe").input(str(input_file),print_format="json",show_format=None,show_streams=None,))
-    media = json.loads(ffprobe.execute())
-    duration_seconds = float(media["format"]["duration"])
-
-    duration = duration_seconds
-    container_margin = 0.90
-    target_total_bitrate = (target_bytes * 8 / duration) * container_margin
-
-    def __init__:
-        
-    def getInputFile():
-        saddsa
-        asdasd
-        asdasd
-
-    def setInputFile(inputFileName):
-        asdsa
-        sadsad
-        sadas
+class CodecConverter(AVCodec):
+    def __init__(self, audioCodec, videoCodec):
+        super.__init__(audioCodec, videoCodec)
 
     def calculate(input_file, type="byte"):
         match type:
@@ -357,4 +330,10 @@ class CodecConverter:
 
     return output_file
 
-libopenh264__experiment(input_file, output_file, vformat, acodec, audio_bitrate, counter, target_total_bitrate)
+    libopenh264__experiment(input_file, output_file, vformat, acodec, audio_bitrate, counter, target_total_bitrate)
+
+def main():
+    # CodecConverter() =
+
+if "__name__" == __main__:
+    main()
